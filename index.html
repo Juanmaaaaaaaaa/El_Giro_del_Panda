@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Giro del Panda</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">HISTORIAS DE UN ZOOLÓGICO</p>
+        <h1>El Giro del Panda</h1>
+      </div>
+      <div class="top-actions">
+        <button id="music-toggle" class="music-btn" tabindex="-1" aria-label="Activar o silenciar la música">♪ Música: encendida</button>
+        <div class="badge">Obra computacional</div>
+      </div>
+    </header>
+
+    <section class="game-shell">
+      <div id="game-container" aria-label="Juego El Giro del Panda"></div>
+      <aside class="side-panel">
+        <div class="panel-card">
+          <p class="label">CAPÍTULO</p>
+          <div class="chapter-number" id="chapter-number">0 <span>/ 5</span></div>
+          <p id="chapter-status">Explora el recinto y encuentra el platillo rosa.</p>
+          <div class="progress-track"><div id="progress-fill"></div></div>
+        </div>
+
+        <div class="panel-card">
+          <p class="label">CICLO DE CADA CAPÍTULO</p>
+          <ol class="cycle">
+            <li id="step-spin" class="active"><b>1</b><span>Girar en el platillo hasta marearte</span></li>
+            <li id="step-eat"><b>2</b><span>Comer bambú <em>(opcional)</em></span></li>
+            <li id="step-sleep"><b>3</b><span>Dormir en la cama</span></li>
+          </ol>
+        </div>
+
+        <div class="panel-card">
+          <p class="label">CONTROLES</p>
+          <div class="control-row"><span class="key">WASD / ↑↓←→</span><span>Mover al panda</span></div>
+          <div class="control-row"><span class="key">E</span><span>Subir y dar impulso</span></div>
+          <div class="control-row"><span class="key">ESPACIO</span><span>Bambú, cama, pelota…</span></div>
+          <div class="control-row"><span class="key">M</span><span>Música</span></div>
+        </div>
+
+        <div class="panel-card little-card">
+          <span class="status-dot"></span>
+          <span id="game-status">Panda tranquilo</span>
+        </div>
+      </aside>
+    </section>
+    <footer>Una pequeña invitación a hacer algo solo porque sí.</footer>
+  </main>
+
+  <div class="story-overlay hidden" id="story-overlay">
+    <article class="story-card">
+      <p class="eyebrow" id="story-kicker">CAPÍTULO 1</p>
+      <h2 id="story-title">¿Por qué no?</h2>
+      <p id="story-text"></p>
+      <div class="story-bottom">
+        <span id="story-counter">1 de 5</span>
+        <button id="continue-button">Continuar →</button>
+      </div>
+    </article>
+  </div>
+
+  <div class="toast hidden" id="toast"></div>
+  <script src="audio.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
